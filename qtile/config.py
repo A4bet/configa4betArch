@@ -235,6 +235,8 @@ screens = [
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
         # x11_drag_polling_rate = 60,
     ),
+   # COPY & PASTE Screen(blahblah) for another top bar & delete systray on that copy
+   # COPY & PASTE Screen(blahblah) for another top bar & delete systray on that copy
 ]
  
 # Drag floating layouts.
@@ -269,7 +271,7 @@ reconfigure_screens = True
 @hook.subscribe.startup
 def autostart():
     if os.path.exists(wallpaper_path):
-        subprocess.Popen(['nitrogen', '--set-zoom-fill', wallpaper_path])
+        subprocess.Popen(['nitrogen', '--set-zoom-fill', '--head=0', wallpaper_path]) # head=0 means main monitor
     subprocess.Popen(["picom", "-b"])
  
 # If things like steam games want to auto-minimize themselves when losing
