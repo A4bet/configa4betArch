@@ -29,7 +29,7 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile import hook
-import subprocess
+import shlex, subprocess
 import os
 
 mod = "mod1"
@@ -230,7 +230,7 @@ screens = [
                     linewidth=0,
                     padding=2,
                     foreground="#000000",
-                    background="#a77ac4"
+                    background="#7197e7"
                 ),
             ],
             background="#00000090",
@@ -369,6 +369,7 @@ reconfigure_screens = True
 def autostart():
     if os.path.exists(wallpaper_path):
         subprocess.Popen(['nitrogen', '--set-zoom-fill', '--head=0', wallpaper_path]) # head=0 means main monitor
+        subprocess.Popen(['nitrogen', '--set-zoom-fill', '--head=1', wallpaper_path])
     subprocess.Popen(["picom", "-b"])
     subprocess.Popen(["xbindkeys"])
 
