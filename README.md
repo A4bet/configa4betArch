@@ -54,6 +54,23 @@ reboot
 
 I recommend installing pamixer & playerctl if you're using xbindkeys since my config has them, and I also recommend XClip or XSel to make the clipboard with vim & neovim work with other programs. 
 
+--
+
+Tap(on the trackpad) to click for laptop ( /etc/X11/xorg.conf.d/40-libinput.conf ):
+```
+Section "InputClass"
+    Identifier "libinput touchpad"
+    MatchIsTouchpad "on"
+    Driver "libinput"
+    Option "Tapping" "on"
+    Option "ClickMethod" "clickfinger"
+    Option "NaturalScrolling" "on"
+EndSection
+```
+```
+sudo systemctl restart display-manager
+```
+
 !! DISCLAIMER !!
 PEOPLE WITH ONE OR 3 OR MORE MONITORS: vim into ~/.config/qtile/config.py remove the 2nd "screen ( .. )" (in the "screens = [ ... ]" varible) and make sure the first one has a "," after it if you dont have a 2nd monitor, if you have more than 3 monitors copy and paste the 2nd "screen(..)" because its configured to not be pimary
 
