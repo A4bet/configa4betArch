@@ -63,6 +63,12 @@
 "flameshot gui"
   Control+Shift+s
 
+"rofi -show drun"
+  alt + r
+
+"bash /home/a4bet/.config/qtile/polyb.sh"
+  alt + b
+
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
 #
