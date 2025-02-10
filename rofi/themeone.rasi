@@ -116,6 +116,14 @@ element {
 element-text {
     background-color: inherit;
     text-color:       inherit;
+    // center the text
+    horizontal-align: 0.5;
+}
+element-icon {
+  size:20px;
+  padding: 1px;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
 }
 element selected.normal {
     background-color: #3e4451;
