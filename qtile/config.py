@@ -34,7 +34,7 @@ import os
 
 mod = "mod1"
 terminal = guess_terminal()
-wallpaper_path = "/usr/share/backgrounds/wp.jpg"
+wallpaper_path = "/usr/share/backgrounds/archlinux/simple.png"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
