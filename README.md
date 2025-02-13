@@ -3,14 +3,14 @@ archinstall script (just run "archinstall" after booted into the iso), must use 
 automated script for the stuff below: https://github.com/A4bet/dotfilesShell
 
 COMMAND:
-sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf && sudo pacman -Syu && sudo pacman -S qtile lxappearance nitrogen thunar firefox vim nvim neofetch fastfetch alacritty picom ufw archlinux-wallpaper lightdm lightdm-gtk-greeter alsa-utils keepassxc intel-ucode flatpak git pacman-contrib xbindkeys flameshot ttf-jetbrains-mono-nerd rofi polybar && sudo systemctl enable ufw && sudo sed -i 's/^GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub && sudo grub-mkconfig -o /boot/grub/cfg && git clone https://aur.archlinux.org/yay.git && cd yay/ && makepkg -si && cd .. && sudo systemctl enable paccache.timer && sudo systemctl enable lightdm.service && cd ~/.config && rm -rf ~/.config/qtile && git clone https://github.com/A4bet/dotfiles.git && sudo mv dotfiles/* ~/.config && mv xbindkeysrc ~/.xbindkeysrc && sudo rm -rf /etc/xdg/picom.conf && sudo mv picom.conf /etc/xdg/picom.conf && git clone https://github.com/NvChad/starter ~/.config/nvim && sudo rm -rf dotfiles && sudo rm -rf README.md && reboot
+sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf && sudo pacman -Syu && sudo pacman -S qtile lxappearance nitrogen thunar firefox vim nvim neofetch fastfetch alacritty picom ufw archlinux-wallpaper lightdm lightdm-gtk-greeter alsa-utils keepassxc intel-ucode flatpak git pacman-contrib xbindkeys flameshot ttf-jetbrains-mono-nerd rofi polybar imagemagick xorg-xdpyinfo && sudo systemctl enable ufw && sudo sed -i 's/^GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub && sudo grub-mkconfig -o /boot/grub/cfg && git clone https://aur.archlinux.org/yay.git && cd yay/ && makepkg -si && cd .. && yay -S i3lock-color && sudo systemctl enable paccache.timer && sudo systemctl enable lightdm.service && cd ~/.config && rm -rf ~/.config/qtile && git clone https://github.com/A4bet/dotfiles.git && sudo mv dotfiles/* ~/.config && mv xbindkeysrc ~/.xbindkeysrc && sudo rm -rf /etc/xdg/picom.conf && sudo mv picom.conf /etc/xdg/picom.conf && git clone https://github.com/NvChad/starter ~/.config/nvim && sudo rm -rf dotfiles && sudo rm -rf README.md && reboot
 
 listed:
 sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 
 sudo pacman -Syu
 
-sudo pacman -S qtile lxappearance nitrogen thunar firefox vim neofetch fastfetch alacritty picom ufw archlinux-wallpaper lightdm lightdm-gtk-greeter alsa-utils keepassxc intel-ucode flatpak git pacman-contrib xbindkeys flameshot ttf-jetbrains-mono-nerd rofi polybar
+sudo pacman -S qtile lxappearance nitrogen thunar firefox vim neofetch fastfetch alacritty picom ufw archlinux-wallpaper lightdm lightdm-gtk-greeter alsa-utils keepassxc intel-ucode flatpak git pacman-contrib xbindkeys flameshot ttf-jetbrains-mono-nerd rofi polybar imagemagick xorg-xdpyinfo
 
 sudo systemctl enable ufw
 
@@ -25,6 +25,8 @@ cd yay/
 makepkg -si
 
 cd ..
+
+yay -S i3lock-color
 
 sudo systemctl enable paccache.timer
 
