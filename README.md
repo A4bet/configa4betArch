@@ -2,6 +2,16 @@ archinstall script (just run "archinstall" after booted into the iso), must use 
 
 automated script for the stuff below: https://github.com/A4bet/dotfilesShell
 
+![image](https://github.com/user-attachments/assets/2c4dcf7d-d46f-4636-ae86-7d4a615648be)
+
+![image](https://github.com/user-attachments/assets/05cee7c0-f033-422b-83bb-2c6278bdc36c)
+
+![image](https://github.com/user-attachments/assets/03194683-36a2-4504-af99-433c343f6bc0)
+![image](https://github.com/user-attachments/assets/5c07b659-7b85-48e1-90b5-0b3fc1e13b81)
+![image](https://github.com/user-attachments/assets/8931ad11-479e-48a0-ab2c-fdd6ea44f6b6)
+![image](https://github.com/user-attachments/assets/98a3f32c-2bc4-4c56-9b59-ab1235cd360c)
+
+
 COMMAND:
 sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf && sudo pacman -Syu && sudo pacman -S qtile lxappearance nitrogen thunar firefox vim nvim neofetch fastfetch alacritty picom ufw archlinux-wallpaper lightdm lightdm-webkit2-greeter alsa-utils keepassxc intel-ucode flatpak git pacman-contrib xbindkeys flameshot ttf-jetbrains-mono-nerd rofi polybar imagemagick xorg-xdpyinfo && sudo systemctl enable ufw && sudo sed -i 's/^greeter-session=.*/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf && sudo sed -i 's/^GRUB_TIMEOUT_STYLE=menu/GRUB_TIMEOUT_STYLE=hidden/' /etc/default/grub && sudo grub-mkconfig -o /boot/grub/cfg && git clone https://aur.archlinux.org/yay.git && cd yay/ && makepkg -si && cd .. && yay -S i3lock-color && sudo systemctl enable paccache.timer && sudo systemctl enable lightdm.service && cd ~/.config && rm -rf ~/.config/qtile && git clone https://github.com/A4bet/dotfiles.git && sudo mv dotfiles/* ~/.config && mv xbindkeysrc ~/.xbindkeysrc && sudo rm -rf /etc/xdg/picom.conf && sudo mv picom.conf /etc/xdg/picom.conf && git clone https://github.com/NvChad/starter ~/.config/nvim && sudo rm -rf dotfiles && sudo rm -rf README.md && reboot
 
