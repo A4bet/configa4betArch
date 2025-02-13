@@ -1,2 +1,2 @@
 #!/bin/sh
-xautolock -time 10 -locker "qtile cmd-obj -o cmd -f shutdown" -detectsleep &
+xautolock -time 4 -locker "/home/a4bet/.config/qtile/lock.sh" -detectsleep &
