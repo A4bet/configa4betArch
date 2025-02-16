@@ -68,6 +68,8 @@ reboot
 
 --
 
+you may need to chmod the shell/bash scripts (ie. chmod +x script.sh)
+
 I recommend installing pamixer & playerctl if you're using xbindkeys since my config has them, and I also recommend XClip or XSel to make the clipboard with vim & neovim work with other programs. 
 
 --
