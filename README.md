@@ -91,7 +91,9 @@ sudo systemctl restart display-manager
 ---
 
 to enable goimports-reviser and gofumpt in nvchad add
-(conform.lua)```local options = {
+(conform.lua)
+```
+local options = {
   formatters = {
     gofumpt = {
       command = vim.fn.expand("$HOME/go/bin/gofumpt"),     -- Adjust if needed
@@ -115,13 +117,17 @@ to enable goimports-reviser and gofumpt in nvchad add
   },
 }
 
-return options```
-and (options.lua)```vim.api.nvim_create_autocmd("BufWritePre", {
+return options
+```
+and (options.lua)
+```
+vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
     require("conform").format({async = false})
   end,
-})```
+})
+```
 
 ---
 !! DISCLAIMER !!
