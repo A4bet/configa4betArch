@@ -88,7 +88,42 @@ EndSection
 ```
 sudo systemctl restart display-manager
 ```
+---
 
+to enable goimports-reviser and gofumpt in nvchad add
+(conform.lua)```local options = {
+  formatters = {
+    gofumpt = {
+      command = vim.fn.expand("$HOME/go/bin/gofumpt"),     -- Adjust if needed
+    },
+    goimports_reviser = {
+      command = vim.fn.expand("$HOME/go/bin/goimports-reviser"),   -- Adjust if needed
+      args = { "-rm-unused", "-set-alias", "-format" }
+    },
+  },
+  formatters_by_ft = {
+    lua = { "stylua" },
+    go = { "goimports-reviser", "gofumpt" },
+    -- css = { "prettier" },
+    -- html = { "prettier" },
+  },
+
+  format_on_save = {
+    --  These options will be passed to conform.format()
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
+}
+
+return options```
+and (options.lua)```vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    require("conform").format({async = false})
+  end,
+})```
+
+---
 !! DISCLAIMER !!
 PEOPLE WITH ONE OR 3 OR MORE MONITORS: vim into ~/.config/qtile/config.py remove the 2nd "screen ( .. )" (in the "screens = [ ... ]" varible) and make sure the first one has a "," after it if you dont have a 2nd monitor, if you have more than 3 monitors copy and paste the 2nd "screen(..)" because its configured to not be pimary
 
