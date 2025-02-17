@@ -131,6 +131,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 ```
 (install with mason & add `gopls` to lspconfig.lua to enable the lsp) 
+
 ---
 !! DISCLAIMER !!
 PEOPLE WITH ONE OR 3 OR MORE MONITORS: vim into ~/.config/qtile/config.py remove the 2nd "screen ( .. )" (in the "screens = [ ... ]" varible) and make sure the first one has a "," after it if you dont have a 2nd monitor, if you have more than 3 monitors copy and paste the 2nd "screen(..)" because its configured to not be pimary
