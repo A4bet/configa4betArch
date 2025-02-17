@@ -132,7 +132,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 ```
-(install with mason & add `gopls` to lspconfig.lua to enable the lsp) 
+(install with mason & add `gopls` to lspconfig.lua to enable the lsp - tailwindcss-language-server, htmlhint, templ, and html-lsp are good lsps/linters/formatters prettier too(install node & npm and run `sudo npm install -g prettier prettier-plugin-tailwindcss`)) 
 
 ---
 !! DISCLAIMER !!
