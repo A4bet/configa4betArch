@@ -1,4 +1,5 @@
 archinstall script (just run "archinstall" after booted into the iso), must use "xorg server" profile and set youur graphics drivers, audio pipewire, grub bootloader
+-
 
 ![image](https://github.com/user-attachments/assets/2c4dcf7d-d46f-4636-ae86-7d4a615648be)
 
