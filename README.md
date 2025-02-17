@@ -74,8 +74,6 @@ you may need to chmod the shell/bash scripts (ie. chmod +x script.sh)
 
 I recommend installing pamixer & playerctl if you're using xbindkeys since my config has them, and I also recommend XClip or XSel to make the clipboard with vim & neovim work with other programs. 
 
-add "transparency = true," to .config/nvim/lua/chadrc.lua in the M.base46 section to make neovim transparent(under the theme to make sure it overrides the theme if theres a conflict).
-
 Tap to click on trackpad
 --
 Tap(on the trackpad) to click for laptop ( /etc/X11/xorg.conf.d/40-libinput.conf ):
@@ -96,6 +94,9 @@ sudo systemctl restart display-manager
 
 Neovim
 ---
+
+add "transparency = true," to .config/nvim/lua/chadrc.lua in the M.base46 section to make neovim transparent(under the theme to make sure it overrides the theme if theres a conflict).
+
 to enable goimports-reviser and gofumpt in nvchad 
 install the plugins witth mason (`:MasonInstall NAME` in neovim), then `go install mvdan.cc/gofumpt@latest` `go install golang.org/x/tools/cmd/goimports@latest`
 add
