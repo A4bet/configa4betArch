@@ -93,7 +93,7 @@ sudo systemctl restart display-manager
 ---
 
 to enable goimports-reviser and gofumpt in nvchad 
-install the plugins witth mason (`:MasonInstall NAME` in neovim), then `go install mvdan.cc/gofumpt@latest` `go install github.com/incu6us/goimports-reviser@latest`
+install the plugins witth mason (`:MasonInstall NAME` in neovim), then `go install mvdan.cc/gofumpt@latest` `go install golang.org/x/tools/cmd/goimports@latest`
 add
 (conform.lua)
 ```
@@ -102,14 +102,16 @@ local options = {
     gofumpt = {
       command = vim.fn.expand("$HOME/go/bin/gofumpt"),     -- Adjust if needed
     },
-    goimports_reviser = {
-      command = vim.fn.expand("$HOME/go/bin/goimports-reviser"),   -- Adjust if needed
-      args = { "-rm-unused", "-set-alias", "-format" }
+    goimports = {
+      command = vim.fn.expand("$HOME/go/bin/goimports"),   -- Adjust if needed
     },
   },
   formatters_by_ft = {
     lua = { "stylua" },
-    go = { "goimports-reviser", "gofumpt" },
+    go = { "gofumpt", "goimports" },
+    html = { "prettier" },
+    css = { "prettier" },
+    javascript = { "prettier" }
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
@@ -133,6 +135,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 ```
 (install with mason & add `gopls` to lspconfig.lua to enable the lsp - tailwindcss-language-server, htmlhint, templ, and html-lsp are good lsps/linters/formatters prettier too(install node & npm and run `sudo npm install -g prettier prettier-plugin-tailwindcss`)) 
+(options.lua with other file extensions)
+```
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = {"*.go", "*.html", "*.css", "*.js", ".templ"},
+  callback = function()
+    require("conform").format({async = false})
+  end,
+})
+```
 
 ---
 !! DISCLAIMER !!
