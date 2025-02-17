@@ -90,7 +90,9 @@ sudo systemctl restart display-manager
 ```
 ---
 
-to enable goimports-reviser and gofumpt in nvchad add
+to enable goimports-reviser and gofumpt in nvchad 
+install the plugins witth mason (`:MasonInstall NAME` in neovim), then `go install mvdan.cc/gofumpt@latest` `go install github.com/incu6us/goimports-reviser@latest`
+add
 (conform.lua)
 ```
 local options = {
