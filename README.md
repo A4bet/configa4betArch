@@ -70,7 +70,7 @@ you may need to chmod the shell/bash scripts (ie. chmod +x script.sh)
 
 I recommend installing pamixer & playerctl if you're using xbindkeys since my config has them, and I also recommend XClip or XSel to make the clipboard with vim & neovim work with other programs. 
 
-add "transparency = true," to .config/nvim/lua/chadrc.lua in the M.base46 section to make neovim transparent.
+add "transparency = true," to .config/nvim/lua/chadrc.lua in the M.base46 section to make neovim transparent(under the theme to make sure it overrides the theme if theres a conflict).
 
 --
 
