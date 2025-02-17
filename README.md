@@ -16,6 +16,7 @@ sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf && sudo 
 -
 
 listed:
+-
 sudo sed -i 's/^#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 
 sudo pacman -Syu
@@ -66,6 +67,7 @@ sudo rm -rf README.md
 
 reboot
 
+MISC
 --
 
 you may need to chmod the shell/bash scripts (ie. chmod +x script.sh)
@@ -74,8 +76,8 @@ I recommend installing pamixer & playerctl if you're using xbindkeys since my co
 
 add "transparency = true," to .config/nvim/lua/chadrc.lua in the M.base46 section to make neovim transparent(under the theme to make sure it overrides the theme if theres a conflict).
 
+Tap to click on trackpad
 --
-
 Tap(on the trackpad) to click for laptop ( /etc/X11/xorg.conf.d/40-libinput.conf ):
 ```
 Section "InputClass"
@@ -92,6 +94,8 @@ sudo systemctl restart display-manager
 ```
 ---
 
+Neovim
+---
 to enable goimports-reviser and gofumpt in nvchad 
 install the plugins witth mason (`:MasonInstall NAME` in neovim), then `go install mvdan.cc/gofumpt@latest` `go install golang.org/x/tools/cmd/goimports@latest`
 add
@@ -145,8 +149,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 ```
 
----
+
 !! DISCLAIMER !!
+---
 PEOPLE WITH ONE OR 3 OR MORE MONITORS: vim into ~/.config/qtile/config.py remove the 2nd "screen ( .. )" (in the "screens = [ ... ]" varible) and make sure the first one has a "," after it if you dont have a 2nd monitor, if you have more than 3 monitors copy and paste the 2nd "screen(..)" because its configured to not be pimary
 
 if you have only one monitor delete the line under the autostart() func that includes nitrogen "--head=1", or if you have more than 3 or more monitors copy and paste that line (--head=0 is monitor 1, --head=1 is monitor 2, etc)  
