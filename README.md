@@ -97,7 +97,7 @@ Neovim
 
 add "transparency = true," to .config/nvim/lua/chadrc.lua in the M.base46 section to make neovim transparent(under the theme to make sure it overrides the theme if theres a conflict).
 
-to enable goimports-reviser and gofumpt in nvchad 
+to enable goimports and gofumpt in nvchad 
 install the plugins witth mason (`:MasonInstall NAME` in neovim), then `go install mvdan.cc/gofumpt@latest` `go install golang.org/x/tools/cmd/goimports@latest`
 add
 (conform.lua)
